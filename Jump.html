@@ -1,15 +1,18 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" http-equiv = "refresh" content = "5;url= URL ">
-<title>B页面</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>跳转</title>
 </head>
 <body>
-    <div>这是B页面</div>
+<h1 align="center">请等待5秒跳转外部网页</h1>
+    <div class="mdui-progress" align="center">
+  <div class="mdui-progress-indeterminate"></div>
+</div>
 
     <script type="text/javascript">
         function getParams(key) {
             var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-             var jumpto = getParams("URL");
             var r = window.location.search.substr(1).match(reg);
             if (r != null) {
                 return unescape(r[2]);
@@ -17,7 +20,10 @@
             return null;
         };
         console.log("参数param1:"+getParams("URL"));//输出aa
-        console.log(jumpto);
+       setTimeout(5000);
+       setTimeout(`window.location.href = getParams("URL");`, 5000)
     </script>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
 </html>
