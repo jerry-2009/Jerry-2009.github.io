@@ -8,7 +8,8 @@
 
     <script type="text/javascript">
         function getParams(key) {
-            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");4
+             var jumpto = getParams("URL"));
             var r = window.location.search.substr(1).match(reg);
             if (r != null) {
                 return unescape(r[2]);
@@ -16,7 +17,7 @@
             return null;
         };
         console.log("参数param1:"+getParams("URL"));//输出aa
-        
+        console.log(jumpto);
     </script>
 </body>
 </html>
