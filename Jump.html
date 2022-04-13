@@ -8,8 +8,8 @@
 
     <script type="text/javascript">
         function getParams(key) {
-            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");4
-             var jumpto = getParams("URL"));
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+             var jumpto = getParams("URL");
             var r = window.location.search.substr(1).match(reg);
             if (r != null) {
                 return unescape(r[2]);
