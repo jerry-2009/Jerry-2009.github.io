@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>跳转</title>
+</head>
+<body>
+<button align="center" class="mdui-btn mdui-btn-raised mdui-color-pink" mdui-dialog="{target: '#why'}">为什么要等待5秒？</button>
+<h5>版本V1.0</br>特征码：BD_Jump</h5>
+
+<h1 align="center">请等待5秒跳转外部网页</h1>
+    <div class="mdui-progress" align="center">
+  <div class="mdui-progress-indeterminate"></div>
+</div>
+
+    <script type="text/javascript">
+        function getParams(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+
+        console.log("参数param1:"+getParams("URL"));//输出aa
+       setTimeout(5000);
+       setTimeout(`window.location.href = "https://pan.baidu.com/s/"+getParams("URL");`, 5000)
+    </script>
+<div class="mdui-dialog" id="why">
+  <div class="mdui-dialog-title">为什么要等待5秒</div>
+  <div class="mdui-dialog-content">为了保证网站的安全性，我们会强制要求用户在跳转时等待5秒，在此期间，网站会自动检测你的浏览器并判断是否跳转。</br>如果你遇到了“你的浏览器不符合访问的要求”请先尝试重新加载网页，或更换网络环境或浏览器。</br>如果你遇到网页在本页的小窗口内浏览，这是网站不安全而遇到的。本网站将启动安全浏览模式。</br>如何关闭5秒等待：此等待是必须的，但是你可以按下<kbd>~</kbd>键与<kbd>=</kbd>键启动开发人员模式来更改等待时间，但是大多数浏览器并不支持。</div>
+  <div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+    <button class="mdui-btn mdui-ripple">确定</button>
+  </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
+</html>
