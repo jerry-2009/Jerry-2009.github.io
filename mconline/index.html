@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Minecraft-Online 汉化版</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Eaglercraft 是真正的Minecraft 1.5.2，您可以在任何常规的Web浏览器中播放。这包括学校的chromebook，它适用于所有chromebook。您可以通过基于Bungeecord的自定义代理加入真正的Minecraft 1.5.2服务器。" />
+<meta name="keywords" content="minecraft, applet, chromebook, lax1dude, games, eaglercraft, eagler" />
+<meta name="author" content="LAX1DUDE" />
+<meta property="og:title" content="Minecraft-Online 汉化版" />
+<meta property="og:locale" content="zn-CN" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://media.discordapp.net/attachments/378764518081429506/932053915061587978/thumbnail2.png" />
+<meta property="og:description" content="Eaglercraft 是真正的Minecraft 1.5.2，您可以在任何常规的Web浏览器中播放。这包括学校的chromebook，它适用于所有chromebook。您可以通过基于Bungeecord的自定义代理加入真正的Minecraft 1.5.2服务器。" />
+<!-- Change this: <meta property="og:url" content="https://g.eags.us/eaglercraft/" /> -->
+<script type="text/javascript" src="classes.js"></script>
+<script type="text/javascript">
+if(document.location.href.startsWith("file:")) {
+alert("您不应该在浏览器中“打开”此文件。请将此文件夹上传到您的HTTP服务器并通过互联网访问它。这不是一个错误，请阅读文档");
+}else {
+window.addEventListener("load", function(){
+window.minecraftOpts = [
+"game_frame","assets.epk",
+""
+];
+(function(){
+var q = window.location.search;
+if(typeof q === 'string' && q.startsWith("?")) {
+	q = new URLSearchParams(q);
+	var s = q.get("server");
+	if(s) window.minecraftOpts.push(s);
+}
+})();
+main();
+});}
+</script>
+</head>
+<body style="margin:0px;width:100vw;height:100vh;" id="game_frame">
+</body>
+</html>
