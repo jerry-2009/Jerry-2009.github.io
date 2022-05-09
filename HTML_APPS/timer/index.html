@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Timer</title>
+
+    <script>
+        var second;//时 分 秒
+        second=0;//初始化
+
+        var clock;//计时器
+        function resetTimer()//重置
+        {
+            clearInterval(clock);
+            second=0;
+            document.getElementById('timeValue').value='你这次已经拉屎了'+second+'秒';
+	document.getElementById('bigtext').value='你这次已经拉屎了'+second+'秒';
+        }
+
+        function startTimer()//开始
+        {
+            clock=setInterval(timer,1000);
+        }
+
+        function stopTimer() {
+            //停止计时
+            clearInterval(clock);
+            document.getElementById('timeValue').value='你这次已经拉屎了'+second+'秒';
+	document.getElementById('bigtext').value='你这次已经拉屎了'+second+'秒';
+        }
+        //计时函数
+        function timer(){
+            second++;
+            document.getElementById('timeValue').value='你这次已经拉屎了'+second+'秒';
+	document.getElementById('bigtext').value='你这次已经拉屎了'+second+'秒';
+        }
+
+    </script>
+</head>
+<body>
+
+
+<div style="text-align: center">
+    <input type="text" id="timeValue" value="点击按钮开始拉屎" style="height:25px; font-size:22px;"  readonly><br>
+    <button type="button" onclick="startTimer()">开始拉屎</button> <button type="button" onclick="stopTimer()">停止拉屎</button> <button type="button" onclick="resetTimer()">时间重置</button>
+    <h1 id="bigtext" value="未开始"></h1>
+</div>
+</body>
+</html>
