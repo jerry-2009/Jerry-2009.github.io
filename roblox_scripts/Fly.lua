@@ -3,7 +3,7 @@ A distribution of https://wearedevs.net/scripts
 Released 2021, Last updated March 14, 2022
 Credits to Infinite Yield for their improved Fly code foundation.
 
-Description: Provides the ability to fly in any direction across the map.
+Description: Provides the ability to fly in any direction across the map
 
 Instruction: Simply execute the script and you should immediately start flying. Move around with WASD(QE) controls.
 Look where you want to go and press W to go forward. Press S to go backward. Press E to go straight left. Press D to 
