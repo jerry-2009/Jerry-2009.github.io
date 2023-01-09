@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+<script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js">
+</script>
+<script>var ClickedNum = 0;</script>
+<script>function changeTime() {
+    var $ = mdui.$;
+    var inst = new mdui.Dialog('#dialog');
+    var time = document.getElementById('GetTimeNotChanged').value;
+    if (time == "") {++ClickedNum;
+      inst.open();
+    } else {
+      var unixTimestamp = new Date(time * 1000);
+      var commonTime = unixTimestamp.toLocaleString();
+      var a_target = document.getElementById('ShowTime');
+      ShowTime.innerHTML = "你的入站时间是：" + commonTime; ++ClickedNum;
+      console.log(ClickedNum);
+      if (ClickedNum % 5 == 0) {
+        Never();
+
+      }
+    }
+  }</script>
+<script>
+  function Never(){
+    window.location.href="https://www.bilibili.com/video/av80433022/";
+
+  }
+
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<html>
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-indigo">
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">menu</i>
+      </a>
+      <a href="javascript:;" class="mdui-typo-headline">B站入站时间转换器</a>
+    </div>
+  </div>
+  <div id="EnterDiv">
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="mdui-typo-headline">①首先按按钮打开https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0然后寻找“jointime”复制并关闭，回到此页面</div>
+    <a mdui-dialog="{target: '#Internet222'}">
+      <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-color-pink">点我访问</button>
+    </a>
+    <br>
+    <div class="mdui-divider-dark">
+    </div>
+    <br>
+    <div class="mdui-typo-display-2">②把刚才复制的jointime（应该是一串数字）复制到下面的输入框中</div>
+    <div class="mdui-textfield mdui-textfield-floating-label">
+      <label class="mdui-textfield-label">输入你的入站时间</label>
+      <input class="mdui-textfield-input" id="GetTimeNotChanged" type="email" />
+    </div>
+    <div class="mdui-typo-display-2">③点击下面的按钮</div>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-color-pink mdui-btn-block" onClick="changeTime()">开始转换</button>
+    <div class="mdui-typo-display-2" id="ShowTime">
+    </div>
+  </div>
+  <div class="mdui-dialog" id="dialog">
+    <div class="mdui-dialog-title">你干嘛哈哈哎哟~你好烦</div>
+    <div class="mdui-dialog-content">不要干一些奇怪的事情啊喂！</div>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>爷知道了</button>
+    </div>
+  </div>
+  </div>
+  <div class="mdui-dialog" id="Internet222">
+    <div class="mdui-dialog-title">
+    </div>
+    <div class="mdui-dialog-content">在页面里找到“jointime”然后复制并关闭此窗口</br>
+      <a href="https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0">
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-color-pink">让我访问！</button>
+      </a>
+    </div>
+    </br>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>关掉，关掉，一定要关掉！</button>
+    </div>
+  </div>
+  </div>
+
+</html>
